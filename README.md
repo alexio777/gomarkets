@@ -1,2 +1,2 @@
 # gomarkets
-Trading library
+Библиотека торговли из Go
