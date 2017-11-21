@@ -3,6 +3,7 @@ package connector
 // BitMEX - BitMEX API
 // https://www.bitmex.com/app/apiOverview
 type BitMEX struct {
+	isConnected bool
 }
 
 // NewBitMex - доступ через BitMEX API
@@ -11,7 +12,7 @@ func NewBitMex() Connector {
 	return &m
 }
 
-// Connect - соединяется с биржей BitMEX
-func (m *BitMEX) Connect() {
-
+// IsConnected - активно ли подключение к бирже?
+func (m *BitMEX) IsConnected() bool {
+	return m.isConnected
 }
