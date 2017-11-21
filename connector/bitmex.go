@@ -10,3 +10,8 @@ func NewBitMex() Connector {
 	m := BitMEX{}
 	return &m
 }
+
+// Connect - соединяется с биржей BitMEX
+func (m *BitMEX) Connect() {
+
+}
