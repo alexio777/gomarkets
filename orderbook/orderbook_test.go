@@ -1,13 +1,11 @@
-package main
+package orderbook
 
 import (
 	"testing"
-
-	"github.com/zulmaster/gomarkets/orderbook"
 )
 
 func TestNewOrderBook(t *testing.T) {
-	ob := orderbook.NewOrderBook()
+	ob := NewOrderBook()
 	if ob == nil {
 		t.Errorf("NewOrderBook вернул nil")
 	}
