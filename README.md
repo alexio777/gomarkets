@@ -13,7 +13,8 @@
 
 * Запускается с указанием connector
 * Подписывается на обновление книги по websockets
-* Используются числа с абсолютной точностью (https://github.com/shopspring/decimal)
+* Используются числа с фиксированной точностью <https://github.com/shopspring/decimal>
+* Используется skiplist <http://github.com/huandu/skiplist>
 * Стаканы разряженный и сжатый (разряженный под вопросом)
 
 ## ChartData

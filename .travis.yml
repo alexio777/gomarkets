@@ -4,4 +4,5 @@ install:
   - go get -d -v .
 
 script:
+  - go test -v
   - go build -v ./

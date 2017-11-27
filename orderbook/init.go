@@ -15,20 +15,21 @@ type OrderBook struct {
 
 // Row - строка стакана
 type Row struct {
-	Price decimal.Decimal
+	Price  decimal.Decimal
+	Volume int64
 }
 
 // NewOrderBook - создает новую книгу
 func NewOrderBook() *OrderBook {
 	var greater skiplist.GreaterThanFunc = func(lhs, rhs interface{}) bool {
-		return lhs.(Row).Price.GreaterThan(rhs.(Row).Price)
+		return lhs.(decimal.Decimal).GreaterThan(rhs.(decimal.Decimal))
 	}
 	var less skiplist.LessThanFunc = func(lhs, rhs interface{}) bool {
-		return lhs.(Row).Price.LessThan(rhs.(Row).Price)
+		return lhs.(decimal.Decimal).LessThan(rhs.(decimal.Decimal))
 	}
 	ob := OrderBook{
-		Asks: skiplist.New(greater),
-		Bids: skiplist.New(less),
+		Asks: skiplist.New(less),
+		Bids: skiplist.New(greater),
 	}
 	return &ob
 }
