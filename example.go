@@ -9,11 +9,16 @@ import (
 
 func main() {
 	log.Println("Примеры")
-	bm := connector.NewBitMex()
-	err := bm.Connect()
+	bc := connector.NewBaseConnector(connector.NewBitMex())
+	err := bc.Connect()
 	if err != nil {
 		log.Fatalln(err)
 	}
+	ob, err := bc.SubscribeOrderBook("XBTUSD")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Println("ob", ob)
+	defer bc.Close()
 	time.Sleep(time.Second * 10)
-	defer bm.Close()
 }
