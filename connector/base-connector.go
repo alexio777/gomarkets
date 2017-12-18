@@ -57,7 +57,7 @@ func (bc *BaseConnector) Connect() (err error) {
 				}
 				element = element.Next()
 			}
-			log.Printf("recv: %s", message[:80])
+			log.Printf("recv: %s", message[:140])
 		}
 	}()
 	// цикл поддержки соединения

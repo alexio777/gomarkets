@@ -20,5 +20,5 @@ func main() {
 	}
 	log.Println("ob", ob)
 	defer bc.Close()
-	time.Sleep(time.Second * 10)
+	time.Sleep(time.Second * 5)
 }
